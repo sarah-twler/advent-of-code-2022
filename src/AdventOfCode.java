@@ -15,8 +15,6 @@ public class AdventOfCode {
     public static void main(String[] args) throws IOException {
         int dayOfAdvent = getDayOfAdvent();
 
-        System.out.println(String.format("Day %s - %s", dayOfAdvent, TITLE[dayOfAdvent - 1]));
-
         /**
          * process here
          */
@@ -35,6 +33,7 @@ public class AdventOfCode {
             System.out.println(line);
         }
 
+        System.out.println(String.format("Day %s - %s", dayOfAdvent, TITLE[dayOfAdvent - 1]));
         var result = "";
         System.out.println("Result: " + result);
     }
