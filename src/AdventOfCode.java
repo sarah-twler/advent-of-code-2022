@@ -1,41 +1,36 @@
 package src;
 
+import src.dayofadvent.CalorieCounter;
 import src.utils.FileReader;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class AdventOfCode {
 
-    static private final String FILE_PATH_FORMAT = "./data/advent/%s_input.txt";
-    private static final String[] TITLE = {"first", "second"};
+    static private final String FILE_PATH_FORMAT = "./data/advent/%s_data.txt";
+    private static final String[] TITLE = {"Calorie Counting"};
 
     public static void main(String[] args) throws IOException {
         int dayOfAdvent = getDayOfAdvent();
 
-        /**
-         * process here
-         */
+        int result1;
+        int result2;
+        String inputFilename = FileReader.getInputFilename(FILE_PATH_FORMAT, dayOfAdvent);
         switch (dayOfAdvent) {
             case 1:
-                System.out.println("Call result calculation here");
+                result1 = CalorieCounter.calcMaxCaloriesCarried(inputFilename);
+                result2 = CalorieCounter.calcCaloriesCarriedByTopThree(inputFilename);
                 break;
             default:
                 System.out.println(String.format("Code for day %s not implemented yet. Try again later!", dayOfAdvent));
                 return;
         }
 
-        // test reading input file
-        List<String> lines = FileReader.readFileToLines(getInputFilename(dayOfAdvent));
-        for (String line : lines) {
-            System.out.println(line);
-        }
 
         System.out.println(String.format("Day %s - %s", dayOfAdvent, TITLE[dayOfAdvent - 1]));
-        var result = "";
-        System.out.println("Result: " + result);
+        System.out.println(String.format("Result 1: %s\nResult 2: %s", result1, result2));
     }
 
     private static int getDayOfAdvent() {
@@ -57,8 +52,5 @@ public class AdventOfCode {
         return dayOfAdvent;
     }
 
-    private static String getInputFilename(int dayOfAdvent) {
-        String day = dayOfAdvent < 10 ? "0" + dayOfAdvent : String.valueOf(dayOfAdvent);
-        return String.format(FILE_PATH_FORMAT, day);
-    }
+
 }
