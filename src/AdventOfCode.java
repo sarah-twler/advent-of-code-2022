@@ -52,5 +52,4 @@ public class AdventOfCode {
         return dayOfAdvent;
     }
 
-
 }
