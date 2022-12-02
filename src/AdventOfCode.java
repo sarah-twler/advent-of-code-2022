@@ -1,6 +1,7 @@
 package src;
 
 import src.dayofadvent.CalorieCounter;
+import src.dayofadvent.StrategyGuideEvaluator;
 import src.utils.FileReader;
 
 import java.io.IOException;
@@ -10,9 +11,9 @@ import java.util.Scanner;
 public class AdventOfCode {
 
     static private final String FILE_PATH_FORMAT = "./data/advent/%s_data.txt";
-    private static final String[] TITLE = {"Calorie Counting"};
+    private static final String[] TITLE = {"Calorie Counting", "Rock Paper Scissors"};
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, IllegalAccessException {
         int dayOfAdvent = getDayOfAdvent();
 
         int result1;
@@ -22,6 +23,10 @@ public class AdventOfCode {
             case 1:
                 result1 = CalorieCounter.calcMaxCaloriesCarried(inputFilename);
                 result2 = CalorieCounter.calcCaloriesCarriedByTopThree(inputFilename);
+                break;
+            case 2:
+                result1 = StrategyGuideEvaluator.calcScoreByPlayerAction(inputFilename);
+                result2 = StrategyGuideEvaluator.calcScoreByPlayerOutcome(inputFilename);
                 break;
             default:
                 System.out.println(String.format("Code for day %s not implemented yet. Try again later!", dayOfAdvent));
