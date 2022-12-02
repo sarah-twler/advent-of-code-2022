@@ -1,12 +1,14 @@
 package src.dayofadvent;
 
+import src.dayofadvent.enums.HandShape;
+import src.dayofadvent.enums.RoundOutcome;
 import src.utils.FileReader;
 
 import java.io.IOException;
 import java.util.List;
 
-import static src.dayofadvent.RockPaperScissorRule.getPlayerOutcome;
-import static src.dayofadvent.RockPaperScissorRule.suggestPlayerAction;
+import static src.dayofadvent.rules.RockPaperScissorRule.getPlayerOutcome;
+import static src.dayofadvent.rules.RockPaperScissorRule.suggestPlayerAction;
 
 public class StrategyGuideEvaluator {
 

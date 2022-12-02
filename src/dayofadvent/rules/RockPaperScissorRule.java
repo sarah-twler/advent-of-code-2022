@@ -1,8 +1,11 @@
-package src.dayofadvent;
+package src.dayofadvent.rules;
+
+import src.dayofadvent.enums.HandShape;
+import src.dayofadvent.enums.RoundOutcome;
 
 import java.util.*;
 
-import static src.dayofadvent.RoundOutcome.*;
+import static src.dayofadvent.enums.RoundOutcome.*;
 
 public class RockPaperScissorRule {
 

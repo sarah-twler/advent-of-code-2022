@@ -1,4 +1,4 @@
-package src.dayofadvent;
+package src.dayofadvent.enums;
 
 public enum HandShape {
 
