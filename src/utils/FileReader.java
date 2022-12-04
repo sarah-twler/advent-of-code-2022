@@ -21,6 +21,7 @@ public class FileReader {
         return String.format(filePathFormat, day);
     }
 
+    /** splits a list horizontally and separates entries into sublist */
     public static List<List<String>> splitListBySeparator(List<String> input, String separator) {
         int[] indexes = Stream.of(
                 IntStream.of(-1), IntStream.range(0, input.size()).filter(i -> input.get(i).equals(separator)),
