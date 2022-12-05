@@ -29,7 +29,7 @@ public class FileReaderTest {
         list.add("");
         list.add("10000");
 
-        List<List<String>> result = FileReader.splitListBySeparator(list, "");
+        List<List<String>> result = FileReader.splitListBySeparator(list, FileReader.SEPARATOR_EMPTY_LINE);
         assertEquals(result.size(), 5);
         assertTrue(result.get(0).containsAll(list.subList(0, 3)));
         assertTrue(result.get(1).containsAll(list.subList(4, 5)));

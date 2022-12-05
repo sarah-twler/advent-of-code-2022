@@ -34,7 +34,7 @@ public class CalorieCounter {
 
     private static List<List<String>> getCaloriesListPerElf(String calorieInputFilename) throws IOException {
         List<String> calorieInputList = FileReader.readFileToLines(calorieInputFilename);
-        return FileReader.splitListBySeparator(calorieInputList, "");
+        return FileReader.splitListBySeparator(calorieInputList, FileReader.SEPARATOR_EMPTY_LINE);
     }
 
     private static int sumCalories(List<String> calorieList) {

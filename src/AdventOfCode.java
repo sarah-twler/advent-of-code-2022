@@ -1,9 +1,6 @@
 package src;
 
-import src.dayofadvent.CalorieCounter;
-import src.dayofadvent.CleanupPairOrganizer;
-import src.dayofadvent.RucksackItemPrioritizer;
-import src.dayofadvent.StrategyGuideEvaluator;
+import src.dayofadvent.*;
 import src.utils.FileReader;
 
 import java.io.IOException;
@@ -13,30 +10,35 @@ import java.util.Scanner;
 public class AdventOfCode {
 
     static private final String FILE_PATH_FORMAT = "./data/advent/%s_data.txt";
-    private static final String[] TITLE = {"Calorie Counting", "Rock Paper Scissors", "Rucksack Reorganization", "Camp Cleanup"};
+    private static final String[] TITLE =
+            {"Calorie Counting", "Rock Paper Scissors", "Rucksack Reorganization", "Camp Cleanup", "Supply Stacks"};
 
     public static void main(String[] args) throws IOException, IllegalAccessException {
         int dayOfAdvent = getDayOfAdvent();
 
-        int result1;
-        int result2;
+        String result1;
+        String result2;
         String inputFilename = FileReader.getInputFilename(FILE_PATH_FORMAT, dayOfAdvent);
         switch (dayOfAdvent) {
             case 1:
-                result1 = CalorieCounter.calcMaxCaloriesCarried(inputFilename);
-                result2 = CalorieCounter.calcCaloriesCarriedByTopThree(inputFilename);
+                result1 = String.valueOf(CalorieCounter.calcMaxCaloriesCarried(inputFilename));
+                result2 = String.valueOf(CalorieCounter.calcCaloriesCarriedByTopThree(inputFilename));
                 break;
             case 2:
-                result1 = StrategyGuideEvaluator.calcScoreByPlayerAction(inputFilename);
-                result2 = StrategyGuideEvaluator.calcScoreByPlayerOutcome(inputFilename);
+                result1 = String.valueOf(StrategyGuideEvaluator.calcScoreByPlayerAction(inputFilename));
+                result2 = String.valueOf(StrategyGuideEvaluator.calcScoreByPlayerOutcome(inputFilename));
                 break;
             case 3:
-                result1 = RucksackItemPrioritizer.getItemPrioritySum(inputFilename);
-                result2 = RucksackItemPrioritizer.getGroupPrioritySum(inputFilename);
+                result1 = String.valueOf(RucksackItemPrioritizer.getItemPrioritySum(inputFilename));
+                result2 = String.valueOf(RucksackItemPrioritizer.getGroupPrioritySum(inputFilename));
                 break;
             case 4:
-                result1 = CleanupPairOrganizer.getSumOfPairsFullyContained(inputFilename);
-                result2 = CleanupPairOrganizer.getSumOfPairsOverlapped(inputFilename);
+                result1 = String.valueOf(CleanupPairOrganizer.getSumOfPairsFullyContained(inputFilename));
+                result2 = String.valueOf(CleanupPairOrganizer.getSumOfPairsOverlapped(inputFilename));
+                break;
+            case 5:
+                result1 = CargoCrane.getStackTopsCraneType9000(inputFilename);
+                result2 = CargoCrane.getStackTopsCraneType9001(inputFilename);;
                 break;
             default:
                 System.out.println(String.format("Code for day %s not implemented yet. Try again later!", dayOfAdvent));

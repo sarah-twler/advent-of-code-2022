@@ -12,6 +12,8 @@ import static java.util.stream.Collectors.toList;
 
 public class FileReader {
 
+    public static final String SEPARATOR_EMPTY_LINE = "";
+
     public static List<String> readFileToLines(String filename) throws IOException {
         return Files.readAllLines(Paths.get(filename));
     }
