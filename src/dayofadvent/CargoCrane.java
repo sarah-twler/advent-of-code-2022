@@ -60,7 +60,7 @@ public class CargoCrane {
     }
 
     private static void moveCrates(Map<Integer, LinkedList<Character>> mapOfStacks, List<String> procedureList, CraneType craneType) {
-        procedureList.forEach(p -> moveCrates(mapOfStacks, getInstruction(p), craneType));
+        procedureList.forEach(p -> moveCrates(mapOfStacks, getCraneAction(p), craneType));
     }
 
     private static void moveCrates(Map<Integer, LinkedList<Character>> crateStacks, CraneAction procedure,
@@ -73,10 +73,10 @@ public class CargoCrane {
         pickedCrates.clear();
     }
 
-    public static CraneAction getInstruction(String instruction) {
+    public static CraneAction getCraneAction(String instruction) {
         Matcher m = digitPattern.matcher(instruction);
-        List<Integer> x = m.results().map(MatchResult::group).map(Integer::parseInt).collect(Collectors.toList());
-        return new CraneAction(x.get(0), x.get(1), x.get(2));
+        List<Integer> digits = m.results().map(MatchResult::group).map(Integer::parseInt).collect(Collectors.toList());
+        return new CraneAction(digits.get(0), digits.get(1), digits.get(2));
     }
 
 

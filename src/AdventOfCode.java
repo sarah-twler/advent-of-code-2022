@@ -11,7 +11,7 @@ public class AdventOfCode {
 
     static private final String FILE_PATH_FORMAT = "./data/advent/%s_data.txt";
     private static final String[] TITLE =
-            {"Calorie Counting", "Rock Paper Scissors", "Rucksack Reorganization", "Camp Cleanup", "Supply Stacks"};
+            {"Calorie Counting", "Rock Paper Scissors", "Rucksack Reorganization", "Camp Cleanup", "Supply Stacks", "Tuning Trouble"};
 
     public static void main(String[] args) throws IOException, IllegalAccessException {
         int dayOfAdvent = getDayOfAdvent();
@@ -39,6 +39,10 @@ public class AdventOfCode {
             case 5:
                 result1 = CargoCrane.getStackTopsCraneType9000(inputFilename);
                 result2 = CargoCrane.getStackTopsCraneType9001(inputFilename);;
+                break;
+            case 6:
+                result1 = String.valueOf(SignalProcessor.getNumberOfCharactersBeforeSignal(inputFilename));
+                result2 = String.valueOf(SignalProcessor.getNumberOfCharactersBeforeMessage(inputFilename));
                 break;
             default:
                 System.out.println(String.format("Code for day %s not implemented yet. Try again later!", dayOfAdvent));

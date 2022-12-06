@@ -53,7 +53,7 @@ public class CargoCraneTest {
 
     @Test
     public void testGetInstructions() {
-        assertTrue(Arrays.equals(new int[]{1, 4, 1}, CargoCrane.getInstruction("move 1 from 4 to 1").getInstruction()));
-        assertTrue(Arrays.equals(new int[]{11, 1, 7}, CargoCrane.getInstruction("move 11 from 1 to 7").getInstruction()));
+        assertTrue(Arrays.equals(new int[]{1, 4, 1}, CargoCrane.getCraneAction("move 1 from 4 to 1").getInstruction()));
+        assertTrue(Arrays.equals(new int[]{11, 1, 7}, CargoCrane.getCraneAction("move 11 from 1 to 7").getInstruction()));
     }
 }
