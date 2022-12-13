@@ -12,7 +12,7 @@ public class AdventOfCode {
     static private final String FILE_PATH_FORMAT = "./data/advent/%s_data.txt";
     private static final String[] TITLE =
             {"Calorie Counting", "Rock Paper Scissors", "Rucksack Reorganization", "Camp Cleanup", "Supply Stacks",
-                    "Tuning Trouble", "No Space Left On Device", "Treetop Tree House", "Rope Bridge"};
+                    "Tuning Trouble", "No Space Left On Device", "Treetop Tree House", "Rope Bridge", "Cathode-Ray Tube"};
 
     public static void main(String[] args) throws IOException, IllegalAccessException {
         int dayOfAdvent = getDayOfAdvent();
@@ -57,11 +57,14 @@ public class AdventOfCode {
                 result1 = String.valueOf(new RopeTailTracer().countTailPositions(inputFilename));
                 result2 = String.valueOf(new RopeTailTracer().countTailPositionsRope(inputFilename));
                 break;
+            case 10:
+                result1 = String.valueOf(SignalStrengthCalculator.getSumSignalStrength(inputFilename));
+                result2 = System.lineSeparator() + SignalStrengthCalculator.getCrtScreen(inputFilename);
+                break;
             default:
                 System.out.println(String.format("Code for day %s not implemented yet. Try again later!", dayOfAdvent));
                 return;
         }
-
 
         System.out.println(String.format("Day %s - %s", dayOfAdvent, TITLE[dayOfAdvent - 1]));
         System.out.println(String.format("Result 1: %s\nResult 2: %s", result1, result2));
