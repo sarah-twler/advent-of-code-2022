@@ -70,5 +70,4 @@ public class SignalStrengthCalculator {
         return signalStrength;
     }
 
-
 }

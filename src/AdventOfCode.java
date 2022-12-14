@@ -12,7 +12,8 @@ public class AdventOfCode {
     static private final String FILE_PATH_FORMAT = "./data/advent/%s_data.txt";
     private static final String[] TITLE =
             {"Calorie Counting", "Rock Paper Scissors", "Rucksack Reorganization", "Camp Cleanup", "Supply Stacks",
-                    "Tuning Trouble", "No Space Left On Device", "Treetop Tree House", "Rope Bridge", "Cathode-Ray Tube"};
+                    "Tuning Trouble", "No Space Left On Device", "Treetop Tree House", "Rope Bridge", "Cathode-Ray Tube",
+                    "Monkey in the Middle"};
 
     public static void main(String[] args) throws IOException, IllegalAccessException {
         int dayOfAdvent = getDayOfAdvent();
@@ -60,6 +61,10 @@ public class AdventOfCode {
             case 10:
                 result1 = String.valueOf(SignalStrengthCalculator.getSumSignalStrength(inputFilename));
                 result2 = System.lineSeparator() + SignalStrengthCalculator.getCrtScreen(inputFilename);
+                break;
+            case 11:
+                result1 = String.valueOf(MonkeyPredictor.getMonkeyBusinessLevelLow(inputFilename));
+                result2 = "tbd";
                 break;
             default:
                 System.out.println(String.format("Code for day %s not implemented yet. Try again later!", dayOfAdvent));
